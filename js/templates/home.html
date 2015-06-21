@@ -1,0 +1,78 @@
+<div flex layout="row">
+    <md-sidenav md-is-locked-open="$mdMedia('gt-md')" class="md-whiteframe-z2" md-component-id="left" id="sidebar">
+        <md-toolbar>
+            <h1 class="md-toolbar-tools" layout-align="center center">LastFM Top Album Analyzer</h1>
+        </md-toolbar>
+        <form>
+            <md-input-container flex="50">
+                <label>Enter Username</label>
+                <input ng-model="username" required>
+            </md-input-container>
+            <md-input-container>
+                <md-select placeholder="Select Timeframe" ng-model="selectedTimeframe">
+                    <md-option value="{{option.value}}" ng-repeat="option in timeframeOptions">{{option.display}}</md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container>
+                <md-button id="home-username-submit-button" class="md-raised md-accent" ng-disabled="!username || !selectedTimeframe" ng-click="submitUserData()">Go!</md-button>
+            </md-input-container>
+        </form>
+    </md-sidenav>
+
+    <md-content id="main-content" flex>
+        <md-toolbar ng-show="userData.realname">
+            <h1 class="md-toolbar-tools" layout-align="center center">{{userData.realname}}'s Top 10 Albums</h1>
+        </md-toolbar>
+        <md-grid-list
+                md-cols-gt-md="12"
+                md-cols-sm="1"
+                md-cols-md="2"
+                md-row-height="3:4">
+            <md-grid-tile
+                    ng-repeat="album in topAlbums"
+                    md-colspan-gt-sm="3"
+                    md-rowspan-gt-sm="3">
+                <md-card class="album-container">
+                    <img ng-src="{{album.imgUrl}}" alt="{{album.name}}" width="325">
+                    <md-card-content>
+                        <h2 class="md-title">{{album.artist.name}}</h2>
+                        <h3 class="md-title">{{album.name}}</h3>
+                    </md-card-content>
+                    <div class="md-actions" layout="row" layout-align="end center">
+                        <md-button>Details</md-button>
+                    </div>
+                </md-card>
+            </md-grid-tile>
+        </md-grid-list>
+    </md-content>
+</div>
+
+        <!-- trying
+
+
+        <md-grid-list
+                md-cols-gt-md="12"
+                md-cols-sm="1"
+                md-cols-md="2"
+                md-row-height="3:4">
+            <md-grid-tile
+                    ng-repeat="album in topAlbums"
+                    md-colspan-gt-sm="3"
+                    md-rowspan-gt-sm="3">
+                <md-card class="album-container">
+                    <img ng-src="{{album.imgUrl}}" alt="{{album.name}}" width="325">
+                    <md-card-content>
+                        <h2 class="md-title">{{album.artist.name}}</h2>
+                        <h3 class="md-title">{{album.name}}</h3>
+                    </md-card-content>
+                    <div class="md-actions" layout="row" layout-align="end center">
+                        <md-button>Details</md-button>
+                    </div>
+                </md-card>
+                <md-grid-tile-footer>
+                    <h3>FUCK</h3>
+                </md-grid-tile-footer>
+            </md-grid-tile>
+        </md-grid-list>
+
+

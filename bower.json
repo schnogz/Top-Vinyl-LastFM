@@ -1,0 +1,12 @@
+{
+    "name": "LastFMTopAlbums",
+    "version": "0.1.1",
+    "dependencies": {
+        "angular-material": "~0.10.0",
+        "angular": "~1.3.14",
+        "angular-aria": "~1.3.14",
+        "angular-animate": "~1.3.14",
+        "angular-route": "~1.3.14",
+        "lodash": "~2.4.1"
+    }
+}

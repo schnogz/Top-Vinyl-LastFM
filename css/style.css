@@ -1,0 +1,29 @@
+img#bg-image {
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+#main-content {
+    z-index: 20;
+    background: none;
+}
+.album-container {
+    background-color: white;
+    height: 425px;
+    width: 325px;
+}
+
+#sidebar {
+    height: 100%; /*dont delete */
+}
