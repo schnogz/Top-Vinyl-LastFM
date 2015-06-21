@@ -4,7 +4,7 @@
 About
 ========
 
-Displays a LastFm user's top albums.
+Displays a LastFm user's top albums with links to purchase physical copies.
 
 Demo
 =======
